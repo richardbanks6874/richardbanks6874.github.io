@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mixes - DJ Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inclusive+Sans&display=swap" rel="stylesheet">
+</head>
+<body>
+    <nav class="main-nav">
+        <div class="container">
+            <a href="index.html" class="logo">
+                <img src="rb-tokyo.png" alt="DJ Avatar" class="logo-avatar">
+                <span>DJ NAME</span>
+            </a>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="mixes.html" class="active">Mixes</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main>
+        <section class="page-header">
+            <div class="container">
+                <h1>Mixes</h1>
+                <p>Explore my latest DJ sets and mixes</p>
+            </div>
+        </section>
+
+        <section class="mixes-grid">
+            <div class="container">
+                <div class="grid" id="mixes-grid">
+                    <!-- Mix cards will be loaded dynamically -->
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 DJ NAME. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Load mixes from JSON
+        fetch('mixes-data.json')
+            .then(response => response.json())
+            .then(data => {
+                const grid = document.getElementById('mixes-grid');
+                data.mixes.forEach(mix => {
+                    const mixCard = document.createElement('a');
+                    mixCard.href = `mix.html?id=${mix.id}`;
+                    mixCard.className = 'mix-card';
+                    mixCard.innerHTML = `
+                        <div class="mix-artwork">
+                            <img src="${mix.artwork}" alt="${mix.title} Cover Art">
+                        </div>
+                        <h3 class="mix-title">${mix.title}</h3>
+                    `;
+                    grid.appendChild(mixCard);
+                });
+            })
+            .catch(error => console.error('Error loading mixes:', error));
+    </script>
+</body>
+</html>

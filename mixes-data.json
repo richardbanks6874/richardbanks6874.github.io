@@ -1,0 +1,99 @@
+{
+  "mixes": [
+    {
+      "id": "mix-1",
+      "title": "Deep House Sessions Vol. 1",
+      "description": "A journey through the deeper side of house music, featuring smooth basslines, atmospheric pads, and soulful vocals. This 90-minute mix takes you from sunset to late night with carefully selected tracks that blend seamlessly together.",
+      "artwork": "https://via.placeholder.com/600x600/300053/FFA200?text=Mix+1",
+      "soundcloud": "https://soundcloud.com/richardbanks/mix1",
+      "mixcloud": "https://mixcloud.com/richardbanks/mix1",
+      "tracklist": [
+        {
+          "artist": "Moodymann",
+          "name": "Sunday Morning",
+          "label": "KDJ Records"
+        },
+        {
+          "artist": "Kerri Chandler",
+          "name": "Bar A Thym",
+          "label": "Madhouse Records"
+        },
+        {
+          "artist": "Larry Heard",
+          "name": "Can You Feel It",
+          "label": "Trax Records"
+        },
+        {
+          "artist": "Move D",
+          "name": "To The Rescue",
+          "label": "Source Records"
+        },
+        {
+          "artist": "Palms Trax",
+          "name": "Equation",
+          "label": "Lobster Theremin"
+        }
+      ]
+    },
+    {
+      "id": "mix-2",
+      "title": "Techno Warehouse",
+      "description": "A hard-hitting techno set recorded live from an underground warehouse party. Raw, industrial sounds combined with hypnotic rhythms that capture the energy of the dancefloor.",
+      "artwork": "https://via.placeholder.com/600x600/6D00BB/FFD080?text=Mix+2",
+      "soundcloud": "https://soundcloud.com/richardbanks/mix2",
+      "mixcloud": "https://mixcloud.com/richardbanks/mix2",
+      "tracklist": [
+        {
+          "artist": "Amelie Lens",
+          "name": "In My Mind",
+          "label": "LENSKE"
+        },
+        {
+          "artist": "VTSS",
+          "name": "Control",
+          "label": "PINKMAN"
+        },
+        {
+          "artist": "I Hate Models",
+          "name": "Daydream",
+          "label": "Disco Halal"
+        },
+        {
+          "artist": "Charlotte de Witte",
+          "name": "Sgadi Li Mi",
+          "label": "KNTXT"
+        }
+      ]
+    },
+    {
+      "id": "mix-3",
+      "title": "Summer Sunset Mix",
+      "description": "A warm and uplifting mix perfect for golden hour. Blending melodic house, nu-disco, and downtempo beats, this set captures the feeling of watching the sun dip below the horizon.",
+      "artwork": "https://via.placeholder.com/600x600/00A846/FFD080?text=Mix+3",
+      "soundcloud": "https://soundcloud.com/richardbanks/mix3",
+      "mixcloud": "https://mixcloud.com/richardbanks/mix3",
+      "tracklist": [
+        {
+          "artist": "Ben Böhmer",
+          "name": "Beyond Beliefs",
+          "label": "Anjunadeep"
+        },
+        {
+          "artist": "Lane 8",
+          "name": "Fingerprint",
+          "label": "This Never Happened"
+        },
+        {
+          "artist": "Yotto",
+          "name": "The One You Left Behind",
+          "label": "Odd One Out"
+        },
+        {
+          "artist": "Nora En Pure",
+          "name": "Saltwater",
+          "label": "Enormous Tunes"
+        }
+      ]
+    }
+  ]
+}

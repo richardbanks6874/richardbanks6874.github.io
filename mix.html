@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title id="page-title">Mix - DJ Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inclusive+Sans&display=swap" rel="stylesheet">
+</head>
+<body>
+    <nav class="main-nav">
+        <div class="container">
+            <a href="index.html" class="logo">
+                <img src="rb-tokyo.png" alt="DJ Avatar" class="logo-avatar">
+                <span>DJ NAME</span>
+            </a>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="mixes.html" class="active">Mixes</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main>
+        <section class="mix-detail">
+            <div class="container">
+                <a href="mixes.html" class="back-link">← Back to Mixes</a>
+                
+                <div class="mix-detail-content" id="mix-content">
+                    <!-- Mix details will be loaded dynamically -->
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 DJ NAME. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Get mix ID from URL parameter
+        const urlParams = new URLSearchParams(window.location.search);
+        const mixId = urlParams.get('id');
+
+        if (!mixId) {
+            window.location.href = 'mixes.html';
+        }
+
+        // Load mix data from JSON
+        fetch('mixes-data.json')
+            .then(response => response.json())
+            .then(data => {
+                const mix = data.mixes.find(m => m.id === mixId);
+                
+                if (!mix) {
+                    window.location.href = 'mixes.html';
+                    return;
+                }
+
+                // Update page title
+                document.getElementById('page-title').textContent = `${mix.title} - DJ Portfolio`;
+
+                // Build the mix detail HTML
+                const content = document.getElementById('mix-content');
+                content.innerHTML = `
+                    <div class="mix-detail-artwork">
+                        <img src="${mix.artwork}" alt="${mix.title} Cover Art">
+                    </div>
+                    
+                    <div class="mix-detail-info">
+                        <h1 class="mix-detail-title">${mix.title}</h1>
+                        
+                        <p class="mix-detail-description">${mix.description}</p>
+
+                        <div class="mix-links">
+                            <a href="${mix.soundcloud}" target="_blank" class="mix-link soundcloud">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                    <path d="M7 17.939h-1v-8.068c.308-.231.639-.429 1-.566v8.634zm3 0h1v-9.224c-.229.265-.443.548-.621.857l-.379-.184v8.551zm-2 0h1v-8.848c-.508-.079-.623-.05-1-.01v8.858zm-4 0h1v-7.02c-.312.458-.555.971-.692 1.535l-.308-.182v5.667zm-3-5.25c-.606.547-1 1.354-1 2.268 0 .914.394 1.721 1 2.268v-4.536zm18.879-.671c-.204-2.837-2.404-5.079-5.117-5.079-1.022 0-1.964.328-2.762.877v10.123h9.089c1.607 0 2.911-1.393 2.911-3.106 0-1.712-1.304-3.106-2.911-3.106-.503 0-.971.126-1.21.291zm-16.879-.027c-.302-.024-.526-.03-1 .122v5.689c.446.143.636.138 1 .138v-5.949z"/>
+                                </svg>
+                                Listen on SoundCloud
+                            </a>
+                            <a href="${mix.mixcloud}" target="_blank" class="mix-link mixcloud">
+                                <span class="mixcloud-icon"></span>
+                                Listen on Mixcloud
+                            </a>
+                        </div>
+
+                        <div class="tracklist">
+                            <h2>Tracklist</h2>
+                            <ol>
+                                ${mix.tracklist.map(track => `
+                                    <li>
+                                        <div class="track-info">
+                                            <span class="track-artist">${track.artist}</span>
+                                            <span class="track-separator">-</span>
+                                            <span class="track-name">${track.name}</span>
+                                            <span class="track-label">${track.label}</span>
+                                        </div>
+                                    </li>
+                                `).join('')}
+                            </ol>
+                        </div>
+                    </div>
+                `;
+            })
+            .catch(error => {
+                console.error('Error loading mix:', error);
+                window.location.href = 'mixes.html';
+            });
+    </script>
+</body>
+</html>
