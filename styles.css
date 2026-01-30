@@ -496,9 +496,9 @@ img {
     display: flex;
     flex-wrap: wrap;
     align-items: baseline;
-    gap: 0.625rem;
+    gap: 0.825rem;
     flex: 1;
-    font-size: 0.95rem;
+    font-size: 0.75rem;
 }
 
 .track-artist {
