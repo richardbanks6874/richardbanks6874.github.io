@@ -496,7 +496,7 @@ img {
     display: flex;
     flex-wrap: wrap;
     align-items: baseline;
-    gap: 0.825rem;
+    gap: 0.25rem;
     flex: 1;
     font-size: 0.75rem;
 }
