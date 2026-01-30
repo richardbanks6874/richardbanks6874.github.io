@@ -44,6 +44,7 @@ h1, h2, h3, h4, h5, h6 {
 
 h1 {
     font-size: clamp(2.5rem, 5vw, 4.5rem);
+     color: var(--color-orange);
 }
 
 h2 {
@@ -484,7 +485,7 @@ img {
     font-family: var(--font-heading);
     font-weight: 700;
     color: var(--color-orange);
-    font-size: 0.875rem;
+    font-size: 0.7rem;
     flex-shrink: 0;
     min-width: 2rem;
     letter-spacing: -0.02em;
@@ -513,19 +514,19 @@ img {
 
 .track-name {
     color: #666;
+    font-style: italic;
     letter-spacing: 0.005em;
 }
 
 .track-label {
     color: #999;
     font-size: 0.875rem;
-    font-style: italic;
     letter-spacing: 0.01em;
 }
 
 .track-label::before {
     content: "[";
-    opacity: 0.6;
+    opacity: 0.8;
 }
 
 .track-label::after {
